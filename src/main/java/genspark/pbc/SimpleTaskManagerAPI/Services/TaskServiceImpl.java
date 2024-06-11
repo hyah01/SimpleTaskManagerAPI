@@ -21,9 +21,9 @@ public class TaskServiceImpl implements TaskService{
 
     @Override
     public Task getTaskById(long taskId) {
-        Optional<Task> t = this.taskDAO.findById(taskId);
+        Optional<Task> t = this.taskDAO.findById(taskId); // find task
         Task task = null;
-        if (t.isPresent()){
+        if (t.isPresent()){ // if exist get it and return
             task=t.get();
         } else {
             throw new RuntimeException(STR."Task Not Found :\{taskId}");
